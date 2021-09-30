@@ -11,6 +11,16 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+// const titleCased = () => tutorials.map(titleCased => (tutorials.str.substring(0,1)).toUpperCase())
+
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(sentence => { 
+    return sentence.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
+  })
 }
+
+//split and join work with strings and arrays
+//sentence.split(" ")Will search after every space
+//.map(word=> word[0].toUpperCase() only returns an array of the first letter capitalized
+//using word.slice will return array of capitalized words or .charAt(0)
+//.join will put them back together 
